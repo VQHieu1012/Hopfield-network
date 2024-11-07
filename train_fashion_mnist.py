@@ -58,10 +58,11 @@ def main():
     
     # Select training data
     data = []
-    for i in range(3):
+    for i in range(10):
         xi = x_train[y_train == i]
         data.append(xi[0])
 
+    # print(data[0])
     # Preprocessing
     print("Start to data preprocessing...")
     data = [preprocess_image(d) for d in data]
@@ -72,12 +73,13 @@ def main():
 
     # Prepare test data
     test = []
-    for i in range(5):
+    for i in range(10):
         xi = x_train[y_train == i]
         test.append(xi[1])
     test = [preprocess_image(d) for d in test]
     
-    predicted = model.predict(test, threshold=60, asynchronous=False)
+    
+    predicted = model.predict(test, threshold=70, asynchronous=False)
     print("Show prediction results...")
     plot(data, test, predicted, figsize=(5, 5))
     # Uncomment to show network weights matrix

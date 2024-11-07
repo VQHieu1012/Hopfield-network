@@ -92,6 +92,6 @@ class HopfieldNetwork:
         plt.imshow(self.W, cmap=cm.coolwarm)
         plt.colorbar()
         plt.title("Network Weights")
-        plt.tight_layout()
+        #plt.tight_layout()
         plt.savefig("weights.png")
         plt.show()
